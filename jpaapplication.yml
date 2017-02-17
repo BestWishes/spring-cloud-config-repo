@@ -38,6 +38,8 @@ spring:
   cloud:
     config:
       enabled: false
+      discovery:
+        enabled: true
 logging:
   file: D:/log/log.log
 debug: false
