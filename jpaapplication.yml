@@ -1,0 +1,52 @@
+server:
+  port: 9124
+  context-path: null
+  ssl:
+    key-store: D:/Develop/key/localhost.keystore
+    key-store-password: localhost
+    key-store-type: JKS
+    key-alias: localhost
+  session:
+    cookie:
+      max-age: 600
+      path: D:/cookie/cookie.txt
+      name: userCookie
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/wish
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    serialization:
+      indent-output: true
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password: null
+  cache:
+    type: redis
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.DefaultNamingStrategy
+    show-sql: true
+  session:
+    store-type: redis
+  cloud:
+    config:
+      enabled: false
+logging:
+  file: D:/log/log.log
+debug: false
+security:
+  basic:
+    enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8765/eureka/
+    
+    
